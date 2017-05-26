@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { HeaderModule } from './header/header.module';
-
+import { SideMenuModule } from './side-menu/side-menu.module';
 
 @NgModule({
   declarations: [
@@ -11,11 +11,12 @@ import { HeaderModule } from './header/header.module';
   ],
   imports: [
     FormsModule,
-    HeaderModule
+    HeaderModule,
+    SideMenuModule,
   ],
   exports: [
-    // components
     HeaderModule,
+    SideMenuModule
   ]
 })
 export class SharedModule {}

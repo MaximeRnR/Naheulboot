@@ -1,20 +1,19 @@
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { MdToolbarModule } from '@angular/material';
-import { HeaderComponent } from './header.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
     // components
-    HeaderComponent,
   ],
   imports: [
     FormsModule,
-    MdToolbarModule,
+    DashboardModule
   ],
   exports: [
-    HeaderComponent
+    DashboardModule
   ]
 })
-export class HeaderModule {}
+export class ComponentsModule {}

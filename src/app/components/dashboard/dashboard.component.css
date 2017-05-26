@@ -1,0 +1,72 @@
+.sidenav-fab-container {
+  min-height: calc(100vh - 64px);
+}
+
+.sidenav-fab-container md-sidenav {
+  max-width: 15%;
+}
+
+.sidenav-fab-container .mat-sidenav-content,
+.sidenav-fab-container md-sidenav {
+  display: flex;
+  overflow: visible;
+}
+
+.scrolling-content {
+  min-height: calc(100vh - 64px);
+  width: 100%;
+  margin-top: 64px;
+}
+
+.inner-side-nav{
+  position: fixed;
+  margin-top: 64px;
+  width: 200px;
+}
+
+.fab {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+.bottom-button{
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+
+.example-card {
+  width: 256px;
+  margin: 16px 16px !important;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/images/shiba1.jpg');
+  background-size: cover;
+}
+
+
+.sidenav-fab-container .card-container {
+
+  margin: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  /* display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+  */
+}
+
+
