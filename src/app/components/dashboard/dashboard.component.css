@@ -1,9 +1,11 @@
 .sidenav-fab-container {
-  min-height: calc(100vh - 64px);
+  margin-top: 64px;
+  width: 100%;
+  height: calc(100vh - 64px);
 }
 
 .sidenav-fab-container md-sidenav {
-  max-width: 15%;
+  max-width: 200px;
 }
 
 .sidenav-fab-container .mat-sidenav-content,
@@ -13,16 +15,10 @@
 }
 
 .scrolling-content {
-  min-height: calc(100vh - 64px);
-  width: 100%;
-  margin-top: 64px;
+  overflow: auto;
 }
 
-.inner-side-nav{
-  position: fixed;
-  margin-top: 64px;
-  width: 200px;
-}
+
 
 .fab {
   position: absolute;
