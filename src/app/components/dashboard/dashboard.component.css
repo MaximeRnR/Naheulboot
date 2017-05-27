@@ -16,6 +16,7 @@
 
 .scrolling-content {
   overflow: auto;
+  width: 100%;
 }
 
 
@@ -38,7 +39,7 @@
 }
 
 .example-header-image {
-  background-image: url('../../../assets/images/shiba1.jpg');
+  background-image: url('../../../assets/images/ariokavatar.png');
   background-size: cover;
 }
 

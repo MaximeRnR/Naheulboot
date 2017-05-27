@@ -6,7 +6,6 @@ import { ModelsModule } from './models/models.module'
 
 @NgModule({
   declarations: [
-    // components
   ],
   imports: [
     FormsModule,
