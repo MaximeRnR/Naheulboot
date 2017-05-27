@@ -16,7 +16,7 @@ import { DashboardComponent } from './dashboard.component';
     DashboardComponent,
   ],
   imports: [
-    BrowserModule,q
+    BrowserModule,
     FormsModule,
     MdSidenavModule,
     MdCardModule,
