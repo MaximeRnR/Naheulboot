@@ -1,9 +1,9 @@
 import { stats } from "./stats";
-import {skills} from "./skills";
-import {weapon} from "./weapon";
-import {protection} from "./protection";
+import { skill } from "./skill";
+import { weapon } from "./weapon";
+import { protection } from "./protection";
 
-export class hero {
+export class Hero {
   id: number;
   name: string;
   sexe: string;
@@ -14,7 +14,7 @@ export class hero {
   destiny_point: number;
   gold: number;
   stats: stats ;
-  skills: skills[];
+  skills: skill[];
   weapons : weapon[];
   protections: protection[];
   description: string;

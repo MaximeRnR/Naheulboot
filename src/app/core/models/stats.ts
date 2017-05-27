@@ -7,7 +7,7 @@ export class stats {
   intelligence: number;
   charisma: number;
   dexterity: number;
-  strenght: number;
+  strength: number;
 
   attack: number;
   parry: number;
