@@ -67,3 +67,37 @@
 }
 
 
+.stats_table {
+  width: 100%;
+  margin-bottom: 21px;
+}
+
+.stats_table thead {
+  display: table-header-group;
+  vertical-align: middle;
+}
+
+
+.stats_table tr {
+  display: table-row
+}
+
+.stats_table th {
+  font-weight: bold;
+}
+
+.stats_table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.stats_table th, .stats_table td {
+  padding: 8px;
+  line-height: 21px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+
