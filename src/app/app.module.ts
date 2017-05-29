@@ -12,10 +12,11 @@ import { AppComponent } from './app.component';
 // Project Specific
 import { SharedModule } from './shared/shared.module';
 import { ComponentsModule } from './components/components.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +25,7 @@ import { ComponentsModule } from './components/components.module';
     BrowserAnimationsModule,
     SharedModule,
     ComponentsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { DashboardModule } from './dashboard/dashboard.module';
+import { HeroDetailsModule } from './hero-details/hero-details.module';
 
 @NgModule({
   declarations: [
@@ -10,10 +11,13 @@ import { DashboardModule } from './dashboard/dashboard.module';
   ],
   imports: [
     FormsModule,
-    DashboardModule
+    DashboardModule,
+    HeroDetailsModule
   ],
   exports: [
-    DashboardModule
+    DashboardModule,
+    HeroDetailsModule
+
   ]
 })
 export class ComponentsModule {}
