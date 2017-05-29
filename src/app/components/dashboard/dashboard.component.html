@@ -22,11 +22,17 @@
     <md-card class="card-container">
       <md-card *ngFor="let hero of heroes" class="example-card">
         <md-card-header>
-          <div md-card-avatar class="example-header-image"></div>
+          <div md-card-avatar class="example-header-image">
+            <img *ngIf="hero.job === 'Guerrier' " md-card-image src="assets/images/guerrier.gif">
+            <img *ngIf="hero.job === 'Mage' " md-card-image src="assets/images/mage.jpg">
+            <img *ngIf="hero.job === 'Voleur' " md-card-image src="assets/images/thief.jpg">
+          </div>
           <md-card-title>{{hero.name}}, niveau : {{hero.level}}</md-card-title>
           <md-card-subtitle>{{hero.race}} {{hero.job}}</md-card-subtitle>
         </md-card-header>
-        <img md-card-image src="assets/images/ariokavatar.png">
+        <img *ngIf="hero.job === 'Guerrier' " md-card-image src="assets/images/guerrier.gif">
+        <img *ngIf="hero.job === 'Mage' " md-card-image src="assets/images/mage.jpg">
+        <img *ngIf="hero.job === 'Voleur' " md-card-image src="assets/images/thief.jpg">
         <md-card-content>
           <p>
             {{hero.description}}

@@ -39,8 +39,8 @@
 }
 
 .example-header-image {
-  background-image: url('../../../assets/images/ariokavatar.png');
   background-size: cover;
+  overflow: hidden;
 }
 
 
@@ -49,6 +49,7 @@
   margin: 32px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   /* display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
