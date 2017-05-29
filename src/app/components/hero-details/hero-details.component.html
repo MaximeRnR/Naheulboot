@@ -19,8 +19,55 @@
     </div>
   </md-sidenav>
   <div class="container">
-    <div class="card-container">
-      <md-card *ngIf="selectedHero" class="hero-card">
+    <md-card *ngIf="selectedHero" class="card-container">
+      <md-grid-list cols="4" rowHeight="256px">
+        <md-grid-tile class="card-grid"
+                      *ngFor="let tile of tiles"
+                      [colspan]="tile.cols"
+                      [rowspan]="tile.rows"
+                      [style.background]="tile.color">
+          <div *ngIf="tile.id === 1" class="tile">
+            <div class="title"><h1>Informations générales</h1></div>
+            <div class="name"> Nom : {{selectedHero.name}}</div>
+            <div class="race-job"> Race : {{selectedHero.race}}, Classe : {{selectedHero.job}}</div>
+            <div class="avatar">
+              <img *ngIf="selectedHero.job === 'Guerrier' " md-card-image src="assets/images/guerrier.gif">
+              <img *ngIf="selectedHero.job === 'Mage' " md-card-image src="assets/images/mage.jpg">
+              <img *ngIf="selectedHero.job === 'Voleur' " md-card-image src="assets/images/thief.jpg">
+            </div>
+            <div class="xp"> Expérience gagnées : {{selectedHero.experience}}</div>
+            <div class="dp">Point de destin restant : {{selectedHero.destiny_point }}</div>
+            <div class="gold">Or : {{selectedHero.gold}}</div>
+          </div>
+          <div *ngIf="tile.id === 2" class="tile">
+            <div class="title"><h1>Caractéristiques</h1></div>
+            <div>
+              <table class="stats_table">
+                <thead>
+                <tr>
+                  <th>COU</th>
+                  <th>INT</th>
+                  <th>CHA</th>
+                  <th>AD</th>
+                  <th>FOR</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>{{selectedHero.stats.bravery}}</td>
+                  <td>{{selectedHero.stats.intelligence}}</td>
+                  <td>{{selectedHero.stats.charisma}}</td>
+                  <td>{{selectedHero.stats.dexterity}}</td>
+                  <td>{{selectedHero.stats.strength}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </md-grid-tile>
+      </md-grid-list>
+
+      <!-- <md-card *ngIf="selectedHero" class="hero-card">
         <div class="card-part">
           <div class="inner-header">
             <div class="hero-name"><h1>{{selectedHero.name}}, niveau : {{selectedHero.level}}</h1></div>
@@ -54,10 +101,8 @@
           <img *ngIf="selectedHero.job === 'Mage' " md-card-image class="avatar" src="assets/images/mage.jpg">
           <img *ngIf="selectedHero.job === 'Voleur' " md-card-image class="avatar" src="assets/images/thief.jpg">
         </div>
-
-
-      </md-card>
-    </div>
+      </md-card> -->
+    </md-card>
   </div>
 </md-sidenav-container>
 <div class="bottom-button">

@@ -8,6 +8,7 @@ import { MdCardModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdListModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
+import { MdGridListModule } from '@angular/material';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MdIconModule } from '@angular/material';
     MdCardModule,
     MdButtonModule,
     MdListModule,
-    MdIconModule
+    MdIconModule,
+    MdGridListModule
   ],
   exports: [
     HeroDetailsComponent
