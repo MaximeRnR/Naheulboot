@@ -1,9 +1,9 @@
-.example-icon {
+.icon {
   padding: 0 14px;
 }
 
-.example-spacer {
-  flex: 1 1 auto;
+.spacer {
+  padding: 14px;
 }
 
 #header {
@@ -11,4 +11,8 @@
   top: 0;
   z-index: 8;
   width: 100%;
+}
+
+#header .link .button-link  {
+  color: #FFFFFF;
 }

@@ -8,6 +8,7 @@ import { MdButtonModule } from '@angular/material';
 import { MdListModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
 import { DashboardComponent } from './dashboard.component';
+import { AppRoutingModule } from '../../app-routing.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DashboardComponent } from './dashboard.component';
     MdCardModule,
     MdButtonModule,
     MdListModule,
-    MdIconModule
+    MdIconModule,
+    AppRoutingModule
   ],
   exports: [
     DashboardComponent

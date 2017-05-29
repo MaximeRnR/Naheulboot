@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { HeroDetailsComponent } from './hero-details.component';
+import { MdSidenavModule } from '@angular/material';
+import { MdCardModule } from '@angular/material';
+import { MdButtonModule } from '@angular/material';
+import { MdListModule } from '@angular/material';
+import { MdIconModule } from '@angular/material';
 
 
 @NgModule({
@@ -13,6 +18,11 @@ import { HeroDetailsComponent } from './hero-details.component';
   imports: [
     BrowserModule,
     FormsModule,
+    MdSidenavModule,
+    MdCardModule,
+    MdButtonModule,
+    MdListModule,
+    MdIconModule
   ],
   exports: [
     HeroDetailsComponent

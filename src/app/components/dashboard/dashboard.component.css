@@ -50,21 +50,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-
-  -webkit-align-content: flex-end;
-  align-content: flex-end;
-  */
 }
 
 
@@ -101,4 +86,6 @@
   border-top: 1px solid #ddd;
 }
 
-
+.scrolling-content .example-card .button-link {
+  color: #000000;
+}
