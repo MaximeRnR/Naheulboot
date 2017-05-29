@@ -18,45 +18,46 @@
       </md-list>
     </div>
   </md-sidenav>
-  <div class="scrolling-content">
-    <md-card *ngIf="selectedHero" class="card-container">
-      <md-card *ngIf="selectedHero" class="example-card">
-        <md-card-header>
-          <div md-card-avatar class="example-header-image">
-            <img *ngIf="selectedHero.job === 'Guerrier' " md-card-image src="assets/images/guerrier.gif">
-            <img *ngIf="selectedHero.job === 'Mage' " md-card-image src="assets/images/mage.jpg">
-            <img *ngIf="selectedHero.job === 'Voleur' " md-card-image src="assets/images/thief.jpg">
+  <div class="container">
+    <div class="card-container">
+      <md-card *ngIf="selectedHero" class="hero-card">
+        <div class="card-part">
+          <div class="inner-header">
+            <div class="hero-name"><h1>{{selectedHero.name}}, niveau : {{selectedHero.level}}</h1></div>
+            <div class="race-job"><h2>{{selectedHero.race}} {{selectedHero.job}}</h2></div>
           </div>
-          <md-card-title>{{selectedHero.name}}, niveau : {{selectedHero.level}}</md-card-title>
-          <md-card-subtitle>{{selectedHero.race}} {{selectedHero.job}}</md-card-subtitle>
-        </md-card-header>
-        <img *ngIf="selectedHero.job === 'Guerrier' " md-card-image class="avatar" src="assets/images/guerrier.gif">
-        <img *ngIf="selectedHero.job === 'Mage' " md-card-image class="avatar" src="assets/images/mage.jpg">
-        <img *ngIf="selectedHero.job === 'Voleur' " md-card-image class="avatar" src="assets/images/thief.jpg">
-        <md-card-content>
-          <table class="stats_table">
-            <thead>
-            <tr>
-              <th>COU</th>
-              <th>INT</th>
-              <th>CHA</th>
-              <th>AD</th>
-              <th>FOR</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>{{selectedHero.stats.bravery}}</td>
-              <td>{{selectedHero.stats.intelligence}}</td>
-              <td>{{selectedHero.stats.charisma}}</td>
-              <td>{{selectedHero.stats.dexterity}}</td>
-              <td>{{selectedHero.stats.strength}}</td>
-            </tr>
-            </tbody>
-          </table>
-        </md-card-content>
+          <div class="inner-header">
+            <table class="stats_table">
+              <thead>
+              <tr>
+                <th>COU</th>
+                <th>INT</th>
+                <th>CHA</th>
+                <th>AD</th>
+                <th>FOR</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>{{selectedHero.stats.bravery}}</td>
+                <td>{{selectedHero.stats.intelligence}}</td>
+                <td>{{selectedHero.stats.charisma}}</td>
+                <td>{{selectedHero.stats.dexterity}}</td>
+                <td>{{selectedHero.stats.strength}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-part">
+          <img *ngIf="selectedHero.job === 'Guerrier' " md-card-image class="avatar" src="assets/images/guerrier.gif">
+          <img *ngIf="selectedHero.job === 'Mage' " md-card-image class="avatar" src="assets/images/mage.jpg">
+          <img *ngIf="selectedHero.job === 'Voleur' " md-card-image class="avatar" src="assets/images/thief.jpg">
+        </div>
+
+
       </md-card>
-    </md-card>
+    </div>
   </div>
 </md-sidenav-container>
 <div class="bottom-button">

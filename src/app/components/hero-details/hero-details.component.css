@@ -14,13 +14,6 @@
   overflow: visible;
 }
 
-.scrolling-content {
-  overflow: auto;
-  width: 100%;
-}
-
-
-
 .fab {
   position: absolute;
   right: 20px;
@@ -33,18 +26,7 @@
   right: 16px;
 }
 
-.example-card {
-  width: 256px;
-  margin: 16px 16px !important;
-}
-
-.example-header-image {
-  background-size: cover;
-  overflow: hidden;
-}
-
-
-.sidenav-fab-container .card-container {
+.sidenav-fab-container .hero-card {
 
   margin: 32px;
   display: flex;
@@ -74,7 +56,6 @@
 
 .stats_table {
   width: 100%;
-  margin-bottom: 21px;
 }
 
 .stats_table thead {
@@ -104,5 +85,33 @@
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
+
+
+.container {
+  overflow: auto;
+  width: 100%;
+}
+
+
+.card-container {
+  width: 100%;
+}
+
+.container .card-container .card-part {
+  width: 100%;
+  display: flex;
+}
+
+.inner-header {
+  width: 50%;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  margin-left: 16px;
+}
+
+
 
 
