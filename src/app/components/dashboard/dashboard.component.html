@@ -29,9 +29,9 @@
     </span>
     <span *ngIf="selectedParam === 'stats'">
       <md-select *ngIf="selectedParam === 'stats'" placeholder="Valeur de recherche"
-                 [(ngModel)]="selectedValue" name="searchValue">
+                 [(ngModel)]="selectedStat" name="searchValue">
         <md-option *ngFor="let stat of stats" [value]="stat.key">
-          {{stat.key}}
+          {{stat.value}}
         </md-option>
       </md-select>
     </span>
@@ -43,8 +43,11 @@
     <span *ngIf="selectedValue">
       {{selectedValue}}
     </span>
-    <span *ngIf="selectedParam === 'stats'">
-      <md-slider
+    <span *ngIf="selectedStatValue">
+      {{selectedStatValue}}
+    </span>
+    <span *ngIf="selectedStat">
+      <md-slider (change)="filterByStat()"
         class="slider"
         color="primary"
         [disabled]="slider['disabled']"
@@ -54,7 +57,7 @@
         [step]="slider['step']"
         [thumb-label]="slider['thumbLabel']"
         [tick-interval]="slider['tickInterval']"
-        [value]="selectedValue"
+        [(ngModel)]="selectedStatValue"
         [vertical]="slider['vertical']">
       </md-slider>
     </span>

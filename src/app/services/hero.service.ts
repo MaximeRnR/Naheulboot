@@ -5,7 +5,6 @@ import {Hero} from '../core/models/hero';
 
 @Injectable()
 export class HeroService {
-  heroes: Hero[];
 
   getHeroes(): Promise<Hero[]> {
     return Promise.resolve(HEROES);
@@ -16,11 +15,14 @@ export class HeroService {
       .then(heroes => heroes.find(hero => hero.id === id));
   }
 
-  getHeroByName(name: string) {
-    this.getHeroes().then(heroes => {
-      this.heroes = heroes;
-      return this.heroes.filter(hero => hero.name.startsWith(name));
-    });
+  getHeroesByName(name: string): Promise<Hero[]> {
+    return this.getHeroes()
+      .then(heroes => heroes.filter(hero => hero.name.startsWith(name)));
   }
 
+  getHeroesByStat(stat: string, value: number): Promise<Hero[]> {
+    return this.getHeroes()
+      .then(heroes => heroes.filter(hero => hero.stats[stat] <= value)
+        .sort((hero1, hero2) => hero2.stats[stat] - hero1.stats[stat]));
+  }
 }

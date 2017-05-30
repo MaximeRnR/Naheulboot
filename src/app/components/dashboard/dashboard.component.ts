@@ -15,13 +15,13 @@ export class DashboardComponent implements OnInit {
   hero: Hero;
 
 
-
   selectedParam: string;
-  selectedParam2: string;
-  selectedValue: string;
+  selectedStat: string = "";
+  selectedValue: string = "";
+  selectedStatValue: number;
 
   params = [
-    {key: null},
+    {key: null, value: ''},
     {key: 'name', value: 'Nom'},
     {key: 'job', value: 'Classe'},
     {key: 'race', value: 'Race'},
@@ -29,12 +29,12 @@ export class DashboardComponent implements OnInit {
     {key: 'stats', value: 'Caractéristiques'},
   ];
   stats = [
-    {key: null},
-    {key: 'COU'},
-    {key: 'INT'},
-    {key: 'CHA'},
-    {key: 'AD'},
-    {key: 'FOR'}
+    {key: null, value: ''},
+    {key: 'bravery', value: 'COU'},
+    {key: 'intelligence', value: 'INT'},
+    {key: 'charisma', value: 'CHA'},
+    {key: 'dexterity', value: 'AD'},
+    {key: 'strength', value: 'FOR'},
   ];
   slider = {
     'autoTicks': false,
@@ -52,7 +52,6 @@ export class DashboardComponent implements OnInit {
   }
 
 
-
   getHeroes(): void {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
@@ -63,7 +62,11 @@ export class DashboardComponent implements OnInit {
   }
 
   filterByName() {
-    this.heroes = this.heroService.getHeroByName(this.selectedValue);
+    this.heroService.getHeroesByName(this.selectedValue).then(heroes => this.heroes = heroes);
+  }
+
+  filterByStat() {
+      this.heroService.getHeroesByStat(this.selectedStat, this.selectedStatValue).then(heroes => this.heroes = heroes);
   }
 
   gotoDetail(hero: Hero): void {
