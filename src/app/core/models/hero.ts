@@ -15,7 +15,7 @@ export class Hero {
   gold: number;
   stats: stats ;
   skills: skill[];
-  weapons : weapon[];
+  weapons: weapon[];
   protections: protection[];
   description: string;
 }
