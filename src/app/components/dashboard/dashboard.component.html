@@ -18,6 +18,51 @@
       </md-list>
     </div>
   </md-sidenav>
+  <md-card class="action-bar">
+    <span class="spacer"></span>
+    <span>
+      <md-select placeholder="Paramètre de recherche" [(ngModel)]="selectedParam" name="searchParam">
+        <md-option *ngFor="let param of params" [value]="param.key">
+          {{param.value}}
+        </md-option>
+      </md-select>
+    </span>
+    <span *ngIf="selectedParam === 'stats'">
+      <md-select *ngIf="selectedParam === 'stats'" placeholder="Valeur de recherche"
+                 [(ngModel)]="selectedValue" name="searchValue">
+        <md-option *ngFor="let stat of stats" [value]="stat.key">
+          {{stat.key}}
+        </md-option>
+      </md-select>
+    </span>
+    <span *ngIf="selectedParam === 'name'">
+      <md-input-container>
+        <input mdInput placeholder="Nom" [(ngModel)]="selectedValue" (input)="filterByName()">
+      </md-input-container>
+    </span>
+    <span *ngIf="selectedValue">
+      {{selectedValue}}
+    </span>
+    <span *ngIf="selectedParam === 'stats'">
+      <md-slider
+        class="slider"
+        color="primary"
+        [disabled]="slider['disabled']"
+        [invert]="slider['invert']"
+        [max]="slider['max']"
+        [min]="slider['min']"
+        [step]="slider['step']"
+        [thumb-label]="slider['thumbLabel']"
+        [tick-interval]="slider['tickInterval']"
+        [value]="selectedValue"
+        [vertical]="slider['vertical']">
+      </md-slider>
+    </span>
+    <span class="spacer"></span>
+    <span>
+        <button color="primary" class="button-link" md-button> <md-icon class="example-icon">search</md-icon> </button>
+    </span>
+  </md-card>
   <div class="scrolling-content">
     <md-card class="card-container">
       <md-card *ngFor="let hero of heroes" class="example-card">
@@ -56,7 +101,9 @@
           </table>
         </md-card-content>
         <md-card-actions>
-          <a (click)="gotoDetail(hero)"><button class="button-link" md-button>DETAILS</button></a>
+          <a (click)="gotoDetail(hero)">
+            <button class="button-link" md-button>DETAILS</button>
+          </a>
         </md-card-actions>
       </md-card>
     </md-card>

@@ -59,6 +59,12 @@
   justify-content: center;
 }
 
+.sidenav-fab-container .action-bar {
+  margin-top: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
 
 .stats_table {
   width: 100%;
@@ -95,4 +101,20 @@
 
 .scrolling-content .example-card .button-link {
   color: #000000;
+}
+
+.icon {
+  padding: 0 14px;
+}
+
+.action-bar span {
+  padding: 20px;
+}
+
+.action-bar .link .button-link  {
+  color: #FFFFFF;
+}
+
+.slider {
+  width: 20%;
 }
