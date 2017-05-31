@@ -118,3 +118,11 @@
 .slider {
   width: 20%;
 }
+.stats_table .stat-selected {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.stats_table .stat-value-selected {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+

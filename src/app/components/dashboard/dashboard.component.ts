@@ -61,12 +61,25 @@ export class DashboardComponent implements OnInit {
     this.getHeroes();
   }
 
-  filterByName() {
+  resetParam(): void {
+    this.getHeroes();
+    this.selectedValue = null;
+    this.selectedStat = null;
+    this.selectedStatValue = null;
+  }
+
+  resetStat(): void {
+    this.getHeroes();
+    this.selectedStatValue = null;
+  }
+
+
+  filterByName(): void {
     this.heroService.getHeroesByName(this.selectedValue).then(heroes => this.heroes = heroes);
   }
 
-  filterByStat() {
-      this.heroService.getHeroesByStat(this.selectedStat, this.selectedStatValue).then(heroes => this.heroes = heroes);
+  filterByStat(): void {
+    this.heroService.getHeroesByStat(this.selectedStat, this.selectedStatValue).then(heroes => this.heroes = heroes);
   }
 
   gotoDetail(hero: Hero): void {

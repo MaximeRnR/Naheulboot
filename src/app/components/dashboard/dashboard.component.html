@@ -1,5 +1,5 @@
 <md-sidenav-container class="sidenav-fab-container">
-  <md-sidenav #sidenav mode="side" opened="false" class="inner-side-nav">
+  <md-sidenav #sidenav mode="over" opened="false" class="inner-side-nav">
     <div>
       <md-list>
         <h3 md-subheader>Folders</h3>
@@ -21,14 +21,14 @@
   <md-card class="action-bar">
     <span class="spacer"></span>
     <span>
-      <md-select placeholder="Paramètre de recherche" [(ngModel)]="selectedParam" name="searchParam">
+      <md-select placeholder="Paramètre de recherche" [(ngModel)]="selectedParam" (change)="resetParam()" name="searchParam">
         <md-option *ngFor="let param of params" [value]="param.key">
           {{param.value}}
         </md-option>
       </md-select>
     </span>
     <span *ngIf="selectedParam === 'stats'">
-      <md-select *ngIf="selectedParam === 'stats'" placeholder="Valeur de recherche"
+      <md-select *ngIf="selectedParam === 'stats'" placeholder="Valeur de recherche" (change)="resetStat()"
                  [(ngModel)]="selectedStat" name="searchValue">
         <md-option *ngFor="let stat of stats" [value]="stat.key">
           {{stat.value}}
@@ -85,20 +85,20 @@
           <table class="stats_table">
             <thead>
             <tr>
-              <th>COU</th>
-              <th>INT</th>
-              <th>CHA</th>
-              <th>AD</th>
-              <th>FOR</th>
+              <th [class.stat-selected]="selectedStat === 'bravery'">COU</th>
+              <th [class.stat-selected]="selectedStat === 'intelligence'">INT</th>
+              <th [class.stat-selected]="selectedStat === 'charisma'">CHA</th>
+              <th [class.stat-selected]="selectedStat === 'dexterity'">AD</th>
+              <th [class.stat-selected]="selectedStat === 'strength'">FOR</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td>{{hero.stats.bravery}}</td>
-              <td>{{hero.stats.intelligence}}</td>
-              <td>{{hero.stats.charisma}}</td>
-              <td>{{hero.stats.dexterity}}</td>
-              <td>{{hero.stats.strength}}</td>
+              <td [class.stat-selected]="selectedStat === 'bravery'" >{{hero.stats.bravery}}</td>
+              <td [class.stat-selected]="selectedStat === 'intelligence'">{{hero.stats.intelligence}}</td>
+              <td [class.stat-selected]="selectedStat === 'charisma'">{{hero.stats.charisma}}</td>
+              <td [class.stat-selected]="selectedStat === 'dexterity'">{{hero.stats.dexterity}}</td>
+              <td [class.stat-selected]="selectedStat === 'strength'">{{hero.stats.strength}}</td>
             </tr>
             </tbody>
           </table>
