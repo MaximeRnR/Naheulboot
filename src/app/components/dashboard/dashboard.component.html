@@ -4,9 +4,12 @@
       <md-list>
         <h3 md-subheader>Folders</h3>
         <md-list-item>
-          <md-icon md-list-icon>folder</md-icon>
-          <h4 md-line>Folder 1</h4>
-          <p md-line> oui </p>
+          <div>
+            <label>Hero name:</label> <input #heroName />
+            <button (click)="add(heroName.value); heroName.value=''">
+              Add
+            </button>
+          </div>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item>
