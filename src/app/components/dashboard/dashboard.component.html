@@ -3,13 +3,9 @@
     <div>
       <md-list>
         <h3 md-subheader>Folders</h3>
-        <md-list-item>
-          <div>
-            <label>Hero name:</label> <input #heroName />
-            <button (click)="add(heroName.value); heroName.value=''">
-              Add
-            </button>
-          </div>
+        <md-list-item (click)="goToAdd()">
+          <md-icon md-list-icon>add</md-icon>
+          <h4 md-line>Ajouter un héros</h4>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item>
@@ -39,7 +35,7 @@
         <md-divider></md-divider>
       </md-list>
     </div>
-  </md-sidenav> 
+  </md-sidenav>
 
   <md-card class="action-bar">
     <span>
@@ -47,12 +43,7 @@
         <md-icon color="primary">menu</md-icon>
       </button>
     </span>
-    <span class="nav-opener">
-      <button md-button (click)="sidenavright.toggle()">
-        <md-icon color="primary">tune</md-icon>
-      </button>
-    </span>
-    <span class="spacer"> </span>
+    <span class="spacer"></span>
     <span>
        <md-icon color="primary" class="example-icon">search</md-icon>
     </span>

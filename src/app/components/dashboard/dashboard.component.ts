@@ -57,6 +57,7 @@ export class DashboardComponent implements OnInit {
   }
 
 
+
   ngOnInit(): void {
     this.getHeroes();
   }
@@ -80,6 +81,10 @@ export class DashboardComponent implements OnInit {
 
   filterByStat(): void {
     this.heroService.getHeroesByStat(this.selectedStat, this.selectedStatValue).then(heroes => this.heroes = heroes);
+  }
+
+  goToAdd(): void {
+    this.router.navigate(['/add']);
   }
 
   gotoDetail(hero: Hero): void {
