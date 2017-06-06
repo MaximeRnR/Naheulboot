@@ -17,7 +17,7 @@ export class HeroService {
 
   getHeroesByName(name: string): Promise<Hero[]> {
     return this.getHeroes()
-      .then(heroes => heroes.filter(hero => hero.name.startsWith(name)));
+      .then(heroes => heroes.filter(hero => hero.name.indexOf(name) !== -1));
   }
 
   getHeroesByStat(stat: string, value: number): Promise<Hero[]> {

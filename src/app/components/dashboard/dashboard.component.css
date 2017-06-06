@@ -4,15 +4,6 @@
   height: calc(100vh - 64px);
 }
 
-.sidenav-fab-container md-sidenav {
-  max-width: 200px;
-}
-
-.sidenav-fab-container .mat-sidenav-content,
-.sidenav-fab-container md-sidenav {
-  display: flex;
-  overflow: visible;
-}
 
 .scrolling-content {
   overflow: auto;
@@ -20,36 +11,22 @@
 }
 
 
-
-.fab {
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
-}
-
-.bottom-button{
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-}
-
 .example-card {
   width: 256px;
   margin: 16px 16px !important;
-  box-shadow: 0 0px 0px rgba(0,0,0,0.12), 0 0px 0px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12), 0 0px 0px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 .example-card:hover {
   z-index: 5;
-  box-shadow: 0 0 28px rgba(0,0,0,0.25), 0 0 10px rgba(0,0,0,0.22);
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.22);
 }
 
 .example-header-image {
   background-size: cover;
   overflow: hidden;
 }
-
 
 .sidenav-fab-container .card-container {
 
@@ -58,13 +35,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
-.sidenav-fab-container .action-bar {
-  margin-top: 32px;
-  margin-left: 32px;
-  margin-right: 32px;
-}
-
 
 .stats_table {
   width: 100%;
@@ -76,9 +46,8 @@
   vertical-align: middle;
 }
 
-
 .stats_table tr {
-  display: table-row
+  display: table-row;
 }
 
 .stats_table th {
@@ -107,22 +76,48 @@
   padding: 0 14px;
 }
 
-.action-bar span {
-  padding: 20px;
-}
-
-.action-bar .link .button-link  {
+.action-bar .link .button-link {
   color: #FFFFFF;
 }
 
 .slider {
   width: 20%;
 }
+
 .stats_table .stat-selected {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
 .stats_table .stat-value-selected {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
+.sidenav-fab-container .action-bar {
+  margin-top: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+
+.sidenav-fab-container .action-bar span {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 16px;
+}
+
+.sidenav-fab-container .action-bar .spacer {
+  flex: 1 1 auto;
+}
+
+
+.side-nav-right {
+  width: 15vw;
+  overflow: auto;
+}
+
+.side-nav-right .side-nav-right-content {
+  position: fixed;
+  width: 15vw;
+}

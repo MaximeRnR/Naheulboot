@@ -12,7 +12,7 @@ import { MdSelectModule } from '@angular/material';
 import { MdSliderModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { DashboardComponent } from './dashboard.component';
-import { AppRoutingModule } from '../../app-routing.module';
+//import { AppRoutingModule } from '../../app-routing.module';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { AppRoutingModule } from '../../app-routing.module';
     MdSelectModule,
     MdSliderModule,
     MdInputModule,
-    AppRoutingModule
+    //AppRoutingModule
   ],
   exports: [
     DashboardComponent
