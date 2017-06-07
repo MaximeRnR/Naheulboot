@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdGridListModule, MdSidenavModule} from '@angular/material';
+import { MdGridListModule } from '@angular/material';
+import { MdSidenavModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdListModule } from '@angular/material';
@@ -12,7 +13,6 @@ import { MdSelectModule } from '@angular/material';
 import { MdSliderModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { AddHeroComponent } from './add-hero.component';
-//import { AppRoutingModule } from '../../app-routing.module';
 
 
 @NgModule({
@@ -33,7 +33,6 @@ import { AddHeroComponent } from './add-hero.component';
     MdSliderModule,
     MdInputModule,
     MdGridListModule,
-    //AppRoutingModule
   ],
   exports: [
     AddHeroComponent

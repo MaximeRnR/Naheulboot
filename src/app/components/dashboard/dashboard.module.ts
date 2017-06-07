@@ -12,7 +12,6 @@ import { MdSelectModule } from '@angular/material';
 import { MdSliderModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { DashboardComponent } from './dashboard.component';
-//import { AppRoutingModule } from '../../app-routing.module';
 
 
 @NgModule({
@@ -32,7 +31,6 @@ import { DashboardComponent } from './dashboard.component';
     MdSelectModule,
     MdSliderModule,
     MdInputModule,
-    //AppRoutingModule
   ],
   exports: [
     DashboardComponent

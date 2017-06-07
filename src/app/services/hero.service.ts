@@ -1,9 +1,9 @@
 
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import {Hero} from '../core/models/hero';
+import { Hero } from '../core/models/hero';
 
 @Injectable()
 export class HeroService {
@@ -15,38 +15,7 @@ export class HeroService {
 
   create(hero: Hero): Promise<Hero> {
     return this.http
-      .post(this.heroesUrl, JSON.stringify(
-        {
-          name: hero.name,
-          sexe: 'Masculin',
-          job: hero.job,
-          race: hero.race,
-          level: hero.level,
-          experience: 258,
-          destiny_point: 0,
-          gold: 583,
-          stats: {
-            bravery: hero.stats.bravery,
-            intelligence:  hero.stats.intelligence,
-            charisma:  hero.stats.charisma,
-            dexterity:  hero.stats.dexterity,
-            strength:  hero.stats.strength,
-            health: 25,
-            mana: 0,
-            armor: 0,
-            attack: 10,
-            parry: 10
-          },
-          skills: [
-            {
-              name: 'Test',
-              effect: 'test'
-            }
-          ],
-          weapons: [],
-          protections: [],
-          description: 'description'
-        }),
+      .post(this.heroesUrl, JSON.stringify(hero),
         {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Hero)

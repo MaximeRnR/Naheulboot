@@ -1,6 +1,6 @@
-import {Hero} from '../core/models/hero';
+import { Hero } from '../core/models/hero';
 
-export const HEROES: Hero[] = [
+export let HEROES: Hero[] = [
     {
       id: 25,
       name: 'Simmons',

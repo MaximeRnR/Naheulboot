@@ -1,8 +1,8 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import { Router} from '@angular/router';
 
-import {HeroService} from '../../services/hero.service';
-import {Hero} from '../../core/models/hero';
+import { HeroService } from '../../services/hero.service';
+import { Hero } from '../../core/models/hero';
 
 @Component({
   selector: 'dashboard',
@@ -13,8 +13,6 @@ import {Hero} from '../../core/models/hero';
 export class DashboardComponent implements OnInit {
   heroes: Hero[];
   hero: Hero;
-
-
   selectedParam: string;
   selectedStat: string = "";
   selectedValue: string = "";

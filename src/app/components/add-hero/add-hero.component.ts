@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from "../../core/models/hero";
 import { HeroService } from "../../services/hero.service";
+import { HEROES } from "../../services/mock-heroes";
 
 @Component({
   selector: 'app-add-hero',
@@ -52,6 +53,6 @@ export class AddHeroComponent implements OnInit {
   }
 
   addHero(): void {
-    this.heroService.create(this.selectedHero);
+    this.heroService.create(this.selectedHero)
   }
 }
