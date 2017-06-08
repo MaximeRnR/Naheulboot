@@ -18,22 +18,46 @@
     </div>
   </md-sidenav>
   <md-sidenav #sidenavright mode="side" align="end" opened="false" class="side-nav-right">
-    <div class="side-nav-right-content">
-      <md-list>
-        <h3 md-subheader>Folders</h3>
-        <md-list-item>
-          <md-icon md-list-icon>folder</md-icon>
-          <h4 md-line>Folder 1</h4>
-          <p md-line> oui </p>
-        </md-list-item>
-        <md-divider></md-divider>
-        <md-list-item>
-          <md-icon md-list-icon>folder</md-icon>
-          <h4 md-line>Folder 2</h4>
-          <p md-line> non </p>
-        </md-list-item>
-        <md-divider></md-divider>
-      </md-list>
+    <div class="side-nav-right-container">
+      <div class="side-nav-right-content">
+        <div>RECHERCHE</div>
+          <div>
+            <md-select placeholder="Paramètre de recherche" [(ngModel)]="selectedParam" (change)="resetParam()"
+                       name="searchParam">
+              <md-option *ngFor="let param of params" [value]="param.key">
+                {{param.value}}
+              </md-option>
+            </md-select>
+          </div>
+        <div *ngIf="selectedParam === 'stats'">
+          <md-select *ngIf="selectedParam === 'stats'" placeholder="Valeur de recherche" (change)="resetStat()"
+                     [(ngModel)]="selectedStat" name="searchValue">
+            <md-option *ngFor="let stat of stats" [value]="stat.key">
+              {{stat.value}}
+            </md-option>
+          </md-select>
+        </div>
+        <div *ngIf="selectedParam === 'name'">
+          <md-input-container>
+            <input mdInput placeholder="Nom" [(ngModel)]="selectedValue" (input)="filterByName()">
+          </md-input-container>
+        </div>
+        <div *ngIf="selectedStat">
+          <md-slider (change)="filterByStat()"
+                     class="slider"
+                     color="primary"
+                     [disabled]="slider['disabled']"
+                     [invert]="slider['invert']"
+                     [max]="slider['max']"
+                     [min]="slider['min']"
+                     [step]="slider['step']"
+                     [thumb-label]="slider['thumbLabel']"
+                     [tick-interval]="slider['tickInterval']"
+                     [(ngModel)]="selectedStatValue"
+                     [vertical]="slider['vertical']">
+          </md-slider>
+        </div>
+      </div>
     </div>
   </md-sidenav>
 
@@ -44,46 +68,6 @@
       </button>
     </span>
     <span class="spacer"></span>
-    <span>
-       <md-icon color="primary" class="example-icon">search</md-icon>
-    </span>
-    <span>
-      <md-select placeholder="Paramètre de recherche" [(ngModel)]="selectedParam" (change)="resetParam()"
-                 name="searchParam">
-        <md-option *ngFor="let param of params" [value]="param.key">
-          {{param.value}}
-        </md-option>
-      </md-select>
-    </span>
-    <span *ngIf="selectedParam === 'stats'">
-      <md-select *ngIf="selectedParam === 'stats'" placeholder="Valeur de recherche" (change)="resetStat()"
-                 [(ngModel)]="selectedStat" name="searchValue">
-        <md-option *ngFor="let stat of stats" [value]="stat.key">
-          {{stat.value}}
-        </md-option>
-      </md-select>
-    </span>
-    <span *ngIf="selectedParam === 'name'">
-      <md-input-container>
-        <input mdInput placeholder="Nom" [(ngModel)]="selectedValue" (input)="filterByName()">
-      </md-input-container>
-    </span>
-    <span *ngIf="selectedStat">
-      <md-slider (change)="filterByStat()"
-                 class="slider"
-                 color="primary"
-                 [disabled]="slider['disabled']"
-                 [invert]="slider['invert']"
-                 [max]="slider['max']"
-                 [min]="slider['min']"
-                 [step]="slider['step']"
-                 [thumb-label]="slider['thumbLabel']"
-                 [tick-interval]="slider['tickInterval']"
-                 [(ngModel)]="selectedStatValue"
-                 [vertical]="slider['vertical']">
-      </md-slider>
-    </span>
-
     <span class="nav-opener">
       <button md-button (click)="sidenavright.toggle()">
         <md-icon color="primary">tune</md-icon>
