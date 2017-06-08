@@ -89,4 +89,9 @@ export class DashboardComponent implements OnInit {
     this.hero = hero;
     this.router.navigate(['/detail', this.hero.id]);
   }
+
+  gotoUpdate(hero: Hero): void {
+    this.hero = hero;
+    this.router.navigate(['/update', this.hero.id]);
+  }
 }

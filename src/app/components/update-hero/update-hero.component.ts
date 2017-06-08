@@ -1,42 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Params, ActivatedRoute } from "@angular/router";
+
 import { Hero } from "../../core/models/hero";
 import { HeroService } from "../../services/hero.service";
 
 @Component({
-  selector: 'app-add-hero',
+  selector: 'app-update-hero',
   templateUrl: '../hero-template/html/hero-change.component.html',
   styleUrls: ['../hero-template/css/hero-change.component.css'],
   providers: [HeroService]
 })
-export class AddHeroComponent implements OnInit {
-
-  selectedHero: Hero = { id: null,
-    name: '',
-    sexe: '',
-    job: '',
-    race: '',
-    level: 0,
-    experience: 0,
-    destiny_point: 0,
-    gold: 0,
-    stats: {
-      bravery: 0,
-      intelligence: 0,
-      charisma: 0,
-      dexterity: 0,
-      strength: 0,
-      health: 0,
-      mana: 0,
-      armor: 0,
-      attack: 0,
-      parry: 0
-    },
-    skills: [],
-    weapons: [],
-    protections: [],
-    description: ''
-  };
-
+export class UpdateHeroComponent implements OnInit {
+  selectedHero: Hero;
   tiles = [
     {id: 1, text: 'Infos Globales', cols: 1, rows: 2, color: '#FFFFFF'},
     {id: 2, text: 'Caractéristique', cols: 3, rows: 1, color: '#FFFFFF'},
@@ -45,13 +20,16 @@ export class AddHeroComponent implements OnInit {
     {id: 5, text: 'Protections', cols: 2, rows: 1, color: '#FFFFFF'},
   ];
 
-
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params
+      .switchMap((params: Params) => this.heroService.getHero(+params['id']))
+      .subscribe(hero => this.selectedHero = hero);
   }
 
   save(): void {
-    this.heroService.create(this.selectedHero);
+    this.heroService.update(this.selectedHero);
   }
+
 }

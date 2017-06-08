@@ -25,6 +25,11 @@
             <div> Gender :</div>
             <div> <input [(ngModel)]="selectedHero.sexe" /></div>
           </div>
+          <div class="avatar">
+            <img *ngIf="selectedHero.job === 'Guerrier' " md-card-image src="assets/images/guerrier.gif">
+            <img *ngIf="selectedHero.job === 'Mage' " md-card-image src="assets/images/mage.jpg">
+            <img *ngIf="selectedHero.job === 'Voleur' " md-card-image src="assets/images/thief.jpg">
+          </div>
           <div class="xp"> Expérience gagnées :  <input [(ngModel)]="selectedHero.experience" /></div>
           <div class="dp">Point de destin restant :  <input [(ngModel)]="selectedHero.destiny_point" /></div>
           <div class="gold">Or :  <input [(ngModel)]="selectedHero.gold" /></div>
@@ -106,7 +111,7 @@
       </md-grid-tile>
     </md-grid-list>
     <md-card-actions>
-      <button (click)="addHero()" md-button>ENREGISTRER </button>
+      <button (click)="save()" md-button>ENREGISTRER</button>
     </md-card-actions>
   </md-card>
 </div>
