@@ -4,12 +4,10 @@
   height: calc(100vh - 64px);
 }
 
-
 .scrolling-content {
   overflow: auto;
   width: 100%;
 }
-
 
 .example-card {
   width: 256px;
@@ -111,13 +109,18 @@
   flex: 1 1 auto;
 }
 
-
 .side-nav-right {
   width: 15vw;
   overflow: auto;
 }
 
 .side-nav-right .side-nav-right-content {
-  position: fixed;
-  width: 15vw;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.side-nav-right .side-nav-right-content div {
+  margin-top: 16px;
 }

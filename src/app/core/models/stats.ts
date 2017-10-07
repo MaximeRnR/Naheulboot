@@ -1,4 +1,5 @@
 export class stats {
+  id: number;
   health: number;
   mana: number;
   armor: number;

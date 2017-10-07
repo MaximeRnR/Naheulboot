@@ -1,0 +1,117 @@
+
+<div class="container">
+  <md-card *ngIf="selectedHero" class="card-container">
+    <md-grid-list cols="4" rowHeight="256px">
+      <md-grid-tile class="card-grid"
+                    *ngFor="let tile of tiles"
+                    [colspan]="tile.cols"
+                    [rowspan]="tile.rows"
+                    [style.background]="tile.color">
+        <div *ngIf="tile.id === 1" class="tile">
+          <div class="title"><h1>Informations générales</h1></div>
+          <div class="info name">
+            <div> Nom :</div>
+            <div> <input [(ngModel)]="selectedHero.name" /></div>
+          </div>
+          <div class="info race">
+            <div> Race :</div>
+            <div> <input [(ngModel)]="selectedHero.race" /></div>
+          </div>
+          <div class="info job">
+            <div> Classe :</div>
+            <div> <input [(ngModel)]="selectedHero.job" /></div>
+          </div>
+          <div class="info sexe">
+            <div> Gender :</div>
+            <div> <input [(ngModel)]="selectedHero.sexe" /></div>
+          </div>
+          <div class="avatar">
+            <img *ngIf="selectedHero.job === 'Guerrier' " md-card-image src="assets/images/guerrier.gif">
+            <img *ngIf="selectedHero.job === 'Mage' " md-card-image src="assets/images/mage.jpg">
+            <img *ngIf="selectedHero.job === 'Voleur' " md-card-image src="assets/images/thief.jpg">
+          </div>
+          <div class="xp"> Expérience gagnées :  <input [(ngModel)]="selectedHero.experience" /></div>
+          <div class="dp">Point de destin restant :  <input [(ngModel)]="selectedHero.destiny_point" /></div>
+          <div class="gold">Or :  <input [(ngModel)]="selectedHero.gold" /></div>
+        </div>
+        <div *ngIf="tile.id === 2" class="tile">
+          <div class="title"><h1>Caractéristiques</h1></div>
+          <div class="stat-container">
+            <div class="stat"> Points de vie :  <input [(ngModel)]="selectedHero.stats.health" /></div>
+            <div class="stat"> Points astraux :  <input [(ngModel)]="selectedHero.stats.mana" /></div>
+          </div>
+          <div class="stat-container">
+            <div class="stat"> Attaque :  <input [(ngModel)]="selectedHero.stats.attack" /></div>
+            <div class="stat"> Parade :  <input [(ngModel)]="selectedHero.stats.parry" /></div>
+          </div>
+          <div>
+            <table class="stats_table">
+              <thead>
+              <tr>
+                <th>COU</th>
+                <th>INT</th>
+                <th>CHA</th>
+                <th>AD</th>
+                <th>FOR</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><input [(ngModel)]="selectedHero.stats.bravery" /></td>
+                <td><input [(ngModel)]="selectedHero.stats.intelligence" /></td>
+                <td><input [(ngModel)]="selectedHero.stats.charisma" /></td>
+                <td><input [(ngModel)]="selectedHero.stats.dexterity" /></td>
+                <td><input [(ngModel)]="selectedHero.stats.strength" /></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div *ngIf="tile.id === 3" class="tile">
+          <div class="title"><h1>Compétences</h1></div>
+          <div class="stat-container">
+            <div>Nom</div>
+            <div>Effet</div>
+          </div>
+          <div *ngFor="let skill of selectedHero.skills" class="stat-container">
+            <div>{{skill.name}}</div>
+            <div>{{skill.effect}}</div>
+          </div>
+        </div>
+        <div *ngIf="tile.id === 4" class="tile">
+          <div class="title"><h1>Armements</h1></div>
+          <div class="stat-container">
+            <div>Nom</div>
+            <div>Point d'Impact</div>
+            <div>Effet</div>
+            <div>Rupture</div>
+          </div>
+          <div *ngFor="let weapon of selectedHero.weapons" class="stat-container">
+            <div>{{weapon.name}}</div>
+            <div>{{weapon.damage}}</div>
+            <div>{{weapon.effect}}</div>
+            <div>{{weapon.rupture}}</div>
+          </div>
+        </div>
+        <div *ngIf="tile.id === 5" class="tile">
+          <div class="title"><h1>Protections</h1></div>
+          <div class="stat-container">
+            <div>Nom</div>
+            <div>Armure</div>
+            <div>Effet</div>
+            <div>Rupture</div>
+          </div>
+          <div *ngFor="let protection of selectedHero.protections" class="stat-container">
+            <div>{{protection.name}}</div>
+            <div>{{protection.armor}}</div>
+            <div>{{protection.effect}}</div>
+            <div>{{protection.rupture}}</div>
+          </div>
+        </div>
+      </md-grid-tile>
+    </md-grid-list>
+    <md-card-actions>
+      <button (click)="save()" md-button>ENREGISTRER</button>
+    </md-card-actions>
+  </md-card>
+</div>
