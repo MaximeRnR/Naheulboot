@@ -1,8 +1,8 @@
 
 <div class="container">
-  <md-card *ngIf="selectedHero" class="card-container">
-    <md-grid-list cols="4" rowHeight="256px">
-      <md-grid-tile class="card-grid"
+  <mat-card *ngIf="selectedHero" class="card-container">
+    <mat-grid-list cols="4" rowHeight="256px">
+      <mat-grid-tile class="card-grid"
                     *ngFor="let tile of tiles"
                     [colspan]="tile.cols"
                     [rowspan]="tile.rows"
@@ -26,9 +26,9 @@
             <div> <input [(ngModel)]="selectedHero.sexe" /></div>
           </div>
           <div class="avatar">
-            <img *ngIf="selectedHero.job === 'Guerrier' " md-card-image src="assets/images/guerrier.gif">
-            <img *ngIf="selectedHero.job === 'Mage' " md-card-image src="assets/images/mage.jpg">
-            <img *ngIf="selectedHero.job === 'Voleur' " md-card-image src="assets/images/thief.jpg">
+            <img *ngIf="selectedHero.job === 'Guerrier' " mat-card-image src="assets/images/guerrier.gif">
+            <img *ngIf="selectedHero.job === 'Mage' " mat-card-image src="assets/images/mage.jpg">
+            <img *ngIf="selectedHero.job === 'Voleur' " mat-card-image src="assets/images/thief.jpg">
           </div>
           <div class="xp"> Expérience gagnées :  <input [(ngModel)]="selectedHero.experience" /></div>
           <div class="dp">Point de destin restant :  <input [(ngModel)]="selectedHero.destiny_point" /></div>
@@ -108,10 +108,10 @@
             <div>{{protection.rupture}}</div>
           </div>
         </div>
-      </md-grid-tile>
-    </md-grid-list>
-    <md-card-actions>
-      <button (click)="save()" md-button>ENREGISTRER</button>
-    </md-card-actions>
-  </md-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-card-actions>
+      <button (click)="save()" mat-button>ENREGISTRER</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

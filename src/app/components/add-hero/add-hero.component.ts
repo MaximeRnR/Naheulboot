@@ -20,6 +20,7 @@ export class AddHeroComponent implements OnInit {
     destiny_point: 0,
     gold: 0,
     stats: {
+      id: null,
       bravery: 0,
       intelligence: 0,
       charisma: 0,

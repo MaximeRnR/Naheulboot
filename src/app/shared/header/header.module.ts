@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 
-import { MdToolbarModule } from '@angular/material';
-import { MdButtonModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
 import { HeaderComponent } from './header.component';
 import { AppRoutingModule } from '../../app-routing.module';
 
@@ -15,8 +15,8 @@ import { AppRoutingModule } from '../../app-routing.module';
   imports: [
     FormsModule,
     AppRoutingModule,
-    MdToolbarModule,
-    MdButtonModule
+    MatToolbarModule,
+    MatButtonModule
   ],
   exports: [
     HeaderComponent

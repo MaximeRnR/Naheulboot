@@ -4,12 +4,12 @@
   height: calc(100vh - 64px);
 }
 
-.sidenav-fab-container md-sidenav {
+.sidenav-fab-container mat-sidenav {
   max-width: 200px;
 }
 
 .sidenav-fab-container .mat-sidenav-content,
-.sidenav-fab-container md-sidenav {
+.sidenav-fab-container mat-sidenav {
   display: flex;
   overflow: visible;
 }

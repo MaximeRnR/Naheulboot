@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { MdSidenavModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
 import { SideMenuComponent } from './side-menu.component';
 
 
@@ -12,7 +12,7 @@ import { SideMenuComponent } from './side-menu.component';
   ],
   imports: [
     FormsModule,
-    MdSidenavModule
+    MatSidenavModule
   ],
   exports: [
     SideMenuComponent

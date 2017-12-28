@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { HeroDetailsComponent } from './hero-details.component';
-import { MdSidenavModule } from '@angular/material';
-import { MdCardModule } from '@angular/material';
-import { MdButtonModule } from '@angular/material';
-import { MdListModule } from '@angular/material';
-import { MdIconModule } from '@angular/material';
-import { MdGridListModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { MatGridListModule } from '@angular/material';
 
 
 @NgModule({
@@ -19,12 +19,12 @@ import { MdGridListModule } from '@angular/material';
   imports: [
     BrowserModule,
     FormsModule,
-    MdSidenavModule,
-    MdCardModule,
-    MdButtonModule,
-    MdListModule,
-    MdIconModule,
-    MdGridListModule
+    MatSidenavModule,
+    MatCardModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatGridListModule
   ],
   exports: [
     HeroDetailsComponent
